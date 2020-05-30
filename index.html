@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slajder</title>
+<link rel="stylesheet" href="css/stil.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 align="center">Slajder za slike</h1>
+    <div id="slike" align="center">
+        <img class="slicica slajd fade" src="img/image01.jpg"/>
+        <img class="slicica slajd fade" src="img/image02.jpg"/> 
+        <img class="slicica slajd fade" src="img/image03.jpg"/>
+        <img class="slicica slajd fade" src="img/image04.jpg"/>
+        <img class="slicica slajd fade" src="img/image05.jpg"/>
+    </div>
+    <br>
+    <div style="text-align: center">
+        <span class="kvadrat"></span>
+        <span class="kvadrat"></span>
+        <span class="kvadrat"></span>
+        <span class="kvadrat"></span>
+        <span class="kvadrat"></span>
+    </div>
+    <br>
+    <a href="autor.html"> O autoru</a>
+    
+    <script>
+        
+        var slideIndex = 0;
+        
+        showSlides();
+
+function showSlides() {
+  var i;
+  var slajdovi = document.getElementsByClassName("slajd");
+  var tackice = document.getElementsByClassName("kvadrat");
+  for (i = 0; i < slajdovi.length; i++) {
+    slajdovi[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slajdovi.length) {slideIndex = 1}    
+  for (i = 0; i < tackice.length; i++) {
+    tackice[i].className = tackice[i].className.replace(" active", "");
+  }
+  slajdovi[slideIndex - 1].style.display = "block";  
+  tackice[slideIndex - 1].className += " active";
+  setTimeout(showSlides, 2000);
+}
+        
+    </script>
+    
+</body>
+</html>
